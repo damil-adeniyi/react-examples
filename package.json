@@ -37,6 +37,9 @@
       },
       {
         "name": "darwin"
+      },
+      {
+        "name": "win32"
       }
     ]
   }
