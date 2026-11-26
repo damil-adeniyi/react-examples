@@ -5,10 +5,16 @@ const COLORS = ['pink', 'green', 'blue', 'yellow', 'purple'];
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+  const [bgChange, setBgChange]  = useState(0)
 
   const onButtonClick = (color) => () => {
     setBackgroundColor(color);
+    onBgChange()
   };
+
+  function onBgChange() {
+    setBgChange(() => bgChange + 1)
+  } 
 
   return (
     <div
@@ -17,6 +23,8 @@ function App() {
         backgroundColor,
       }}
     >
+      <div>Color change: { bgChange}</div>
+
       {COLORS.map((color) => (
         <button
           type="button"
